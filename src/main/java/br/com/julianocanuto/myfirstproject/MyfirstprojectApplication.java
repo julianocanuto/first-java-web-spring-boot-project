@@ -1,13 +1,26 @@
 package br.com.julianocanuto.myfirstproject;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import br.com.julianocanuto.myfirstproject.entities.Category;
+import br.com.julianocanuto.myfirstproject.repositories.CategoryRepository;
+
 @SpringBootApplication
-public class MyfirstprojectApplication {
+public class MyfirstprojectApplication implements CommandLineRunner {
+
+	@Autowired
+	private CategoryRepository categoryRepository;
 
 	public static void main(String[] args) {
 		SpringApplication.run(MyfirstprojectApplication.class, args);
+	}
+
+	@Override
+	public void run(String... args) throws Exception {
+
 	}
 
 }
