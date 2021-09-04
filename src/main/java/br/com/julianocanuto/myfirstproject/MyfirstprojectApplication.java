@@ -10,12 +10,16 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import br.com.julianocanuto.myfirstproject.entities.Category;
 import br.com.julianocanuto.myfirstproject.entities.Product;
 import br.com.julianocanuto.myfirstproject.repositories.CategoryRepository;
+import br.com.julianocanuto.myfirstproject.repositories.ProductRepository;
 
 @SpringBootApplication
 public class MyfirstprojectApplication implements CommandLineRunner {
 
 	@Autowired
 	private CategoryRepository categoryRepository;
+	
+	@Autowired
+	private ProductRepository productRepository;
 
 	public static void main(String[] args) {
 		SpringApplication.run(MyfirstprojectApplication.class, args);
@@ -37,6 +41,12 @@ public class MyfirstprojectApplication implements CommandLineRunner {
 
 		categoryRepository.save(cat1);
 		categoryRepository.save(cat2);
+		
+		productRepository.save(p1);
+		productRepository.save(p2);
+		productRepository.save(p3);
+		productRepository.save(p4);
+		
 	}
 
 }
